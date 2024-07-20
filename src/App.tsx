@@ -7,23 +7,20 @@ import music_data from './data.json';
 import SongCard from './components/SongCard/SongCard';
 
 function App() {
-
-  const renderSong = ({item}:{item :any}) => <SongCard props={item}></SongCard>
-  const renderSeperator = () => <View style={style.seperator} ></View>
-   // aradaki cizgiyi yapmak icin
+  const renderSong = ({item}: {item: any}) => (
+    <SongCard props={item}></SongCard>
+  );
+  const renderSeperator = () => <View style={style.seperator}></View>;
+  // aradaki cizgiyi yapmak icin
 
   return (
     <SafeAreaView style={style.container}>
       <View style={style.container}>
         <FlatList
-          keyExtractor={(item) => item.id}
+          keyExtractor={item => item.id}
           data={music_data}
           renderItem={renderSong}
-          ItemSeparatorComponent={renderSeperator}>
-          
-
-
-          </FlatList>
+          ItemSeparatorComponent={renderSeperator}></FlatList>
       </View>
     </SafeAreaView>
   );
@@ -35,9 +32,8 @@ const style = StyleSheet.create({
   container: {
     flex: 1,
   },
-  seperator:{
-     borderWidth:    1,
-     borderColor :'#e0e0e0'
-      
-    }
+  seperator: {
+    borderWidth: 1,
+    borderColor: '#e0e0e0',
+  },
 });

@@ -1,0 +1,22 @@
+import React from 'react';
+import {View, Text, Image} from 'react-native';
+import styles from './SongCard.styles';
+
+const SongCard = ({props}: {props: any}) => {
+  return (
+    <View style={styles.container}>
+      <Image style={styles.image} source={{uri:props.imageUrl}} ></Image>
+      <View style={styles.innerContainer}>
+        <Text style={styles.title}>{props.title}</Text>
+      
+        <View style={styles.infoContainer}>
+          <Text style={styles.artist}>{props.artist}</Text>
+          <Text style={styles.year}>{props.year}</Text>
+        </View>
+      </View>
+    </View>
+  );
+};
+
+export default SongCard;
+ 
